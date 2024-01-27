@@ -40,86 +40,37 @@
         .download-button:hover {
             background-color: #5fa8d3;
         }
-
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background-color: #ccc;
-            margin-top: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            background-color: #00ff15;
-            width: 0;
-            transition: width 0.3s ease-in-out;
-        }
     </style>
 </head>
 <body>
     <div class="modpack">
         <h2>CreatePack</h2>
         <p>Version: 1.16.5</p>
-        <p>This is a modpack which has all the create addons on Minecraft version 1.16.5</p>
+        <p>This is a modpack which has all the create addons on minecraft version 1.16.5</p>
         <p>Author: Tommageris</p>
-        <button class="download-button" onclick="downloadModpackCreatepack()">Download</button>
-        <div id="progress-bar-createpack" class="progress-bar">
-            <div class="progress-bar-fill" id="progress-bar-fill-createpack"></div>
-        </div>
+        <button class="download-button" onclick="downloadModpackCreatepack('TBD_launcher')">Download</button>
     </div>
     <div class="modpack">
         <h2>RailRoading-Modpack</h2>
         <p>Version: 1.12.2</p>
         <p>Immersive railroading mod with some addons</p>
         <p>Author: BystrickySotous</p>
-        <button class="download-button" onclick="downloadModpackRailroading()">Download</button>
-        <div id="progress-bar-railroading" class="progress-bar">
-            <div class="progress-bar-fill" id="progress-bar-fill-railroading"></div>
-        </div>
+        <button class="download-button" onclick="downloadModpackRailroading('TBD_launcher')">Download</button>
     </div>
 
     <!-- Add more modpacks as needed -->
 
     <script>
-        function downloadModpackCreatepack() {
-            const progressBar = document.getElementById('progress-bar-fill-createpack');
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://tommager1107.github.io/axe-launcher/createpack-1.16.5.rar', true);
-            xhr.responseType = 'blob';
-            xhr.onprogress = function(event) {
-                const percentComplete = (event.loaded / event.total) * 100;
-                progressBar.style.width = percentComplete + '%';
-            };
-            xhr.onload = function(event) {
-                progressBar.style.width = '100%';
-                setTimeout(() => {
-                    alert('Download complete!');
-                    progressBar.style.width = '0';
-                }, 500);
-            };
-            xhr.send();
+        function downloadModpackCreatepack(modpackName) {
+            // Replace the URL with the actual download link for the modpack
+            window.location.href = 'https://tommager1107.github.io/axe-launcher/createpack-1.16.5.rar';
         }
-
-        function downloadModpackRailroading() {
-            const progressBar = document.getElementById('progress-bar-fill-railroading');
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://drive.google.com/uc?export=download&id=1jm48AwZBjrWCaGlfj-GjehINZlD8vPWm', true);
-            xhr.responseType = 'blob';
-            xhr.onprogress = function(event) {
-                const percentComplete = (event.loaded / event.total) * 100;
-                progressBar.style.width = percentComplete + '%';
-            };
-            xhr.onload = function(event) {
-                progressBar.style.width = '100%';
-                setTimeout(() => {
-                    alert('Download complete!');
-                    progressBar.style.width = '0';
-                }, 500);
-            };
-            xhr.send();
+        function downloadModpackRailroading(modpackName) {
+            // Replace the URL with the actual download link for the modpack
+            window.location.href = 'https://drive.google.com/uc?export=download&id=1jm48AwZBjrWCaGlfj-GjehINZlD8vPWm';
         }
     </script>
 </body>
 </html>
+
+can you add to this to like when i click dowload to show how much is remaining in % and like just show how long  will it take
