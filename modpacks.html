@@ -64,7 +64,7 @@
         <p>Version: 1.16.5</p>
         <p>This is a modpack which has all the create addons on Minecraft version 1.16.5</p>
         <p>Author: Tommageris</p>
-        <button class="download-button" onclick="downloadModpackCreatepack('TBD_launcher')">Download</button>
+        <button class="download-button" onclick="downloadModpackCreatepack()">Download</button>
         <div id="progress-bar-createpack" class="progress-bar">
             <div class="progress-bar-fill" id="progress-bar-fill-createpack"></div>
         </div>
@@ -74,7 +74,7 @@
         <p>Version: 1.12.2</p>
         <p>Immersive railroading mod with some addons</p>
         <p>Author: BystrickySotous</p>
-        <button class="download-button" onclick="downloadModpackRailroading('TBD_launcher')">Download</button>
+        <button class="download-button" onclick="downloadModpackRailroading()">Download</button>
         <div id="progress-bar-railroading" class="progress-bar">
             <div class="progress-bar-fill" id="progress-bar-fill-railroading"></div>
         </div>
@@ -83,7 +83,7 @@
     <!-- Add more modpacks as needed -->
 
     <script>
-        function downloadModpackCreatepack(modpackName) {
+        function downloadModpackCreatepack() {
             const progressBar = document.getElementById('progress-bar-fill-createpack');
             const xhr = new XMLHttpRequest();
             xhr.open('GET', 'https://tommager1107.github.io/axe-launcher/createpack-1.16.5.rar', true);
@@ -102,7 +102,7 @@
             xhr.send();
         }
 
-        function downloadModpackRailroading(modpackName) {
+        function downloadModpackRailroading() {
             const progressBar = document.getElementById('progress-bar-fill-railroading');
             const xhr = new XMLHttpRequest();
             xhr.open('GET', 'https://drive.google.com/uc?export=download&id=1jm48AwZBjrWCaGlfj-GjehINZlD8vPWm', true);
