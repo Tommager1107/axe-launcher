@@ -40,9 +40,37 @@
         .download-button:hover {
             background-color: #5fa8d3;
         }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by ID...">
+        <button onclick="searchModpack()" class="search-button">Search</button>
+    </div>
     <div class="modpack">
         <h2>CreatePack</h2>
         <p>Version: 1.16.5</p>
@@ -90,6 +118,24 @@
          function downloadModpackbtmc(modpackName) {
             // Replace the URL with the actual download link for the modpack
             window.location.href = 'https://www.curseforge.com/api/v1/mods/452013/files/4883118/download';
+        }
+
+        function searchModpack() {
+            var input, filter, modpacks, modpack, h2, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            modpacks = document.getElementsByClassName('modpack');
+
+            for (i = 0; i < modpacks.length; i++) {
+                modpack = modpacks[i];
+                h2 = modpack.getElementsByTagName('h2')[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    modpack.style.display = "";
+                } else {
+                    modpack.style.display = "none";
+                }
+            }
         }
     </script>
 </body>
