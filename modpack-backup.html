@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modpacks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .modpack {
+            margin-bottom: 20px;
+            border: 1px solid #fff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .modpack h2 {
+            margin-top: 0;
+        }
+
+        .modpack p {
+            margin-bottom: 0;
+        }
+
+        .download-button {
+            background-color: #00ff15;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #5fa8d3;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .search-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search... ModpackName, ID">
+        <button onclick="searchModpack()" class="search-button">Search</button>
+    </div>
+    <div class="modpack">
+        <h2>CreatePack</h2>
+        <p>Version: 1.16.5</p>
+        <p>This is a modpack which has all the create addons on minecraft version 1.16.5</p>
+        <p>Author: Tommageris</p>
+        <button class="download-button" onclick="downloadModpackCreatepack('TBD_launcher')">Download</button>
+    </div>
+    <div class="modpack">
+        <h2>RailRoading-Modpack</h2>
+        <p>Version: 1.12.2</p>
+        <p>Immersive railroading mod with some addons</p>
+        <p>Author: BystrickySotous</p>
+        <button class="download-button" onclick="downloadModpackRailroading('TBD_launcher')">Download</button>
+    </div>
+    <div class="modpack">
+        <h2>All the Mods 9 - ATM9</h2>
+        <p>Version: 1.20.1</p>
+        <p>All the Mods 9 has over 400 mods and countless quests with a built-in proper endgame. Can you craft the ATM Star? Do you dare take on the Gregstar?</p>
+        <p>Author: ATMTeam</p>
+        <button class="download-button" onclick="downloadModpackATM9('TBD_launcher')">Download</button>
+    </div>
+     <div class="modpack">
+        <h2>Better MC</h2>
+        <p>Version: 1.19.2</p>
+        <p>NONE</p>
+        <p>Author: SHXRKIE</p>
+        <button class="download-button" onclick="downloadModpackbtmc('TBD_launcher')">Download</button>
+    </div>
+
+    <!-- Add more modpacks as needed -->
+
+    <script>
+        function downloadModpackCreatepack(modpackName) {
+            // Replace the URL with the actual download link for the modpack
+            window.location.href = 'https://tommager1107.github.io/axe-launcher/createpack-1.16.5.rar';
+        }
+        function downloadModpackRailroading(modpackName) {
+            // Replace the URL with the actual download link for the modpack
+            window.location.href = 'https://drive.google.com/uc?export=download&id=1jm48AwZBjrWCaGlfj-GjehINZlD8vPWm';
+        }
+        function downloadModpackATM9(modpackName) {
+            // Replace the URL with the actual download link for the modpack
+            window.location.href = 'https://www.curseforge.com/api/v1/mods/715572/files/5089637/download';
+        }
+         function downloadModpackbtmc(modpackName) {
+            // Replace the URL with the actual download link for the modpack
+            window.location.href = 'https://www.curseforge.com/api/v1/mods/452013/files/4883118/download';
+        }
+
+        function searchModpack() {
+            var input, filter, modpacks, modpack, h2, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            modpacks = document.getElementsByClassName('modpack');
+
+            for (i = 0; i < modpacks.length; i++) {
+                modpack = modpacks[i];
+                h2 = modpack.getElementsByTagName('h2')[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    modpack.style.display = "";
+                } else {
+                    modpack.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
